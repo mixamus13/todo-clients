@@ -16,8 +16,7 @@ public class ToDoErrorHandler extends DefaultResponseErrorHandler {
     private Logger log = LoggerFactory.getLogger(ToDoErrorHandler.class);
 
     @Override
-    public void handleError(URI url, HttpMethod method, ClientHttpResponse response)
-            throws IOException {
+    public void handleError(URI url, HttpMethod method, ClientHttpResponse response) throws IOException {
         log.error(response.getStatusCode().toString());
         log.error(StreamUtils.copyToString(response.getBody(), Charset.defaultCharset()));
     }
